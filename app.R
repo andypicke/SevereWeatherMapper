@@ -47,6 +47,19 @@ ui <- fluidPage(
 
 server <- function(input, output) {
 
+  output$day1map <- leaflet::renderLeaflet({
+    plot_map(dat1, "Day 1 Outlook")
+  })
+  
+  # output$day2map <- leaflet::renderLeaflet({
+  #   plot_map(dat2, "Day 2 Outlook")
+  # })
+  # 
+  # output$day3map <- leaflet::renderLeaflet({
+  #   plot_map(dat3, "Day 3 Outlook")
+  # })
+  
+  
 }
 
 
