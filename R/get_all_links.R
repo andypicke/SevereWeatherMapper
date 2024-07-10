@@ -5,5 +5,5 @@ get_all_links <- function(page_url) {
   html <- rvest::read_html(page_url)
   
   # create a list of all the hyperlinks on the website
-  links <- rvest::html_attr(html_nodes(html, "a"), "href")
+  links <- rvest::html_attr(rvest::html_nodes(html, "a"), "href")
 }
