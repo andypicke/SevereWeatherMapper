@@ -1,7 +1,13 @@
-
-# Define a function to make a list of all links on a webpage
+#'  Return a list of all links on a webpage
+#'
+#' @param page_url URL of the webpage
+#'
+#' @return links: a list of all hyperlinks on page
+#' @export
+#'
 get_all_links <- function(page_url) {
-  # read the html from the website for day 1 outlook
+  
+  # read the html from the website 
   html <- rvest::read_html(page_url)
   
   # create a list of all the hyperlinks on the website
