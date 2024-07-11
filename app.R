@@ -45,7 +45,8 @@ ui <- fluidPage(
                            "from the ", 
                            a(href = "https://www.spc.noaa.gov/", "NOAA Storm Prediction Center"),
                            "on an interactive leaflet map."),
-      h4("Disclaimer: This app is not affiliated with or endorsed by NOAA or SPC. Before making any desicions based on these forecasts, users should check the official forecast pages to verify accuracy. ")
+      h4("Disclaimer: This app is not affiliated with or endorsed by NOAA or SPC. Before making any desicions based on these forecasts, users should check the official forecast pages to verify accuracy. "),
+      h4(a(href = "https://github.com/andypicke/SevereWeatherMapper", "Source Code on Github"))
       )
     ) #tabsetPanel
   )#sidebarLayout
