@@ -5,7 +5,7 @@ account: andypicke
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12302830
-bundleId: 8849310
+bundleId: 8853200
 url: https://andypicke.shinyapps.io/SevereWeatherMapper/
 version: 1
 asMultiple: FALSE
