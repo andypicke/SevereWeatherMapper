@@ -28,7 +28,8 @@ plot_map <- function(dat_to_map, title_string) {
   # set bounds based on bounding box and add labels
   m <- m |>
     setMaxBounds(lng1 = bb$xmin, lng2 = bb$xmax, lat1 = bb$ymin, lat2 = bb$ymax) |>
-    addLegend(labels = dat_to_map$LABEL2, colors = dat_to_map$fill)
+    addLegend(labels = dat_to_map$LABEL2, colors = dat_to_map$fill) |>
+    leaflet.extras::addResetMapButton() # add button to reset map to original position
   
   
   # make title for map
@@ -57,7 +58,7 @@ plot_map <- function(dat_to_map, title_string) {
   
   # add title to map
   m <- addControl(map = m, title, position = "topleft", className = "map-title")
-  
+
   return(m)
   
 } # function

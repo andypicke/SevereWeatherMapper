@@ -11,9 +11,10 @@
 #------------------------------------------
 
 library(shiny)
-library(bslib)
-library(sf)
-library(leaflet)
+library(bslib) # app UI 
+library(sf) # read shapefiles
+library(leaflet) # mapping
+library(leaflet.extras)
 source('./R/get_all_links.R')
 
 
