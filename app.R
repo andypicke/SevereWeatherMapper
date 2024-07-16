@@ -11,6 +11,7 @@
 #------------------------------------------
 
 library(shiny)
+library(bslib)
 library(sf)
 library(leaflet)
 source('./R/get_all_links.R')
@@ -26,31 +27,28 @@ dat3 <- get_data_one_day(whday = 3)
 # Define UI for app
 #-------------------------------------------------------------------
 
-ui <- fluidPage(
+ui <- bslib::page_fluid(
   
-  # Application title
-  titlePanel("Convective Outlook Forecast"),
-  
-  # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(),
+  card(
+    # Application title
+    card_header("Convective Outlook Forecast"),
     
-    # Show a plot of the generated distribution
-    tabsetPanel(
-      tabPanel("Day 1 Outlook", leaflet::leafletOutput("day1map", width = "100%")),
-      tabPanel("Day 2 Outlook", leaflet::leafletOutput("day2map", width = "100%")),
-      tabPanel("Day 3 Outlook", leaflet::leafletOutput("day3map", width = "100%")),
-      tabPanel("About", h4("This Shiny App Displays ",
-                           a(href = "https://www.spc.noaa.gov/products/outlook/", "Convective Outlooks"), 
-                           "from the ", 
-                           a(href = "https://www.spc.noaa.gov/", "NOAA Storm Prediction Center"),
-                           "on an interactive leaflet map."),
-      h4("Disclaimer: This app is not affiliated with or endorsed by NOAA or SPC. Before making any desicions based on these forecasts, users should check the official forecast pages to verify accuracy. "),
-      h4(a(href = "https://github.com/andypicke/SevereWeatherMapper", "Source Code on Github"))
-      )
-    ) #tabsetPanel
-  )#sidebarLayout
-)#fluidPage
+    navset_card_underline(
+      nav_panel("Day 1 Outlook", leaflet::leafletOutput("day1map", width = "100%")),
+      nav_panel("Day 2 Outlook", leaflet::leafletOutput("day2map", width = "100%")),
+      nav_panel("Day 3 Outlook", leaflet::leafletOutput("day3map", width = "100%")),
+      nav_panel("About", tags$ul(
+        tags$li(h4("This Shiny App Displays ",
+                   a(href = "https://www.spc.noaa.gov/products/outlook/", "Convective Outlooks"), 
+                   "from the ", 
+                   a(href = "https://www.spc.noaa.gov/", "NOAA Storm Prediction Center"),
+                   "on an interactive leaflet map.")),
+        tags$li(h4("Disclaimer: This app is not affiliated with or endorsed by NOAA or SPC. Before making any desicions based on these forecasts, users should check the official forecast pages to verify accuracy. ")),
+        tags$li(h4(a(href = "https://github.com/andypicke/SevereWeatherMapper", "Source Code on Github")))
+      ))
+    ) # navset_card_underline
+  ) # card
+) # page_fluid
 
 
 #-------------------------------------------------------------------
