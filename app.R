@@ -46,7 +46,9 @@ ui <- bslib::page_fluid(
                    "on an interactive leaflet map.")),
         tags$li(h4("Disclaimer: This app is not affiliated with or endorsed by NOAA or SPC. Before making any desicions based on these forecasts, users should check the official forecast pages to verify accuracy. ")),
         tags$li(h4(a(href = "https://github.com/andypicke/SevereWeatherMapper", "Source Code on Github")))
-      ))
+        )
+      ),
+      full_screen = TRUE 
     ) # navset_card_underline
   ) # card
 ) # page_fluid
