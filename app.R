@@ -15,10 +15,9 @@ library(bslib) # app UI
 library(sf) # read shapefiles
 library(leaflet) # mapping
 library(leaflet.extras)
-source('./R/get_all_links.R')
 
 
-
+# retireve and load shapefiles for forecasts
 dat1 <- get_data_one_day(whday = 1)
 dat2 <- get_data_one_day(whday = 2)
 dat3 <- get_data_one_day(whday = 3)
